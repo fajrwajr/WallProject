@@ -88,7 +88,7 @@ EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_PORT = 587
 SENDGRID_SANDBOX_MODE_IN_DEBUG = False
 EMAIL_USE_TSL = True
-SENDGRID_API_KEY = "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"
+SENDGRID_API_KEY = ""
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 
