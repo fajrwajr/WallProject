@@ -72,27 +72,23 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'auth_system.wsgi.application'
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'auth_system',
+        'USER': 'gitpod',
+        'PASSWORD': 'frtysk489',
+        'HOST': 'localhost'
+    }
+}
 
-# Database
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'auth_system',
-#         'USER': 'postgres',
-#         'PASSWORD': 'frtysk489',
-#         'HOST': 'localhost'
-#     }
-# }
-
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 465
-EMAIL_HOST_USER = "bookreaderfajr@gmail.com"
-EMAIL_PASSWORD = "frtysk489",
-EMAIL_USE_SSL = True
-
-
+EMAIL_BACKEND = 'sendgrid_backend.SendgridBackend'
+EMAIL_HOST_USER = "apikey"
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_PORT = 587
+SENDGRID_SANDBOX_MODE_IN_DEBUG = False
+EMAIL_USE_TSL = True
+SENDGRID_API_KEY = "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"
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 
