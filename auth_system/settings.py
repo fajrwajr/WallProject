@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
+from decouple import config
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -75,7 +76,7 @@ WSGI_APPLICATION = 'auth_system.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'auth_system',
+        'NAME': 'auth_sytem',
         'USER': 'gitpod',
         'PASSWORD': 'frtysk489',
         'HOST': 'localhost'
@@ -85,10 +86,12 @@ DATABASES = {
 EMAIL_BACKEND = 'sendgrid_backend.SendgridBackend'
 EMAIL_HOST_USER = "apikey"
 EMAIL_HOST = 'smtp.sendgrid.net'
+DEFAULT_FROM_EMAIL = "bookreaderfajr@gmail.com"
+EMAIL_FROM="bookreaderfajr@gmail.com"
 EMAIL_PORT = 587
 SENDGRID_SANDBOX_MODE_IN_DEBUG = False
 EMAIL_USE_TSL = True
-SENDGRID_API_KEY = ""
+SENDGRID_API_KEY = config("SENDGRID_API_KEY")
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 
