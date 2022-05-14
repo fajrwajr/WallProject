@@ -24,7 +24,7 @@ const Login = ({login, isAuthenticated}) => {
 
 
     if (isAuthenticated) {
-        navigateTo('/')    
+        navigateTo('/comment')    
     } 
 
     return (
@@ -60,9 +60,6 @@ const Login = ({login, isAuthenticated}) => {
         
             <p className='mt-3'>
                 Don't have an account? <Link to='/signup'>Sign Up</Link>
-            </p>
-            <p className='mt-3'>
-                Forgot your Password? <Link to='/reset-password'>Reset Password</Link>
             </p>
         </div>
     );

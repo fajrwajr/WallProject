@@ -37,8 +37,8 @@ const Signup = ({signup, isAuthenticated}) => {
 
     return (
         <div className='container mt-5'>
-            <h1>Sign Up</h1>
-            <p>Create your Account</p>
+            <h1>Do you love Attack on Titan?</h1>
+            <h3>Create your Account, and join the discussion!</h3>
             <form onSubmit={e => onSubmit(e)}>
             <div className='form-group'>
                     <input
@@ -91,9 +91,6 @@ const Signup = ({signup, isAuthenticated}) => {
         
             <p className='mt-3'>
                 Already have an account? <Link to='/login'>Log In</Link>
-            </p>
-            <p className='mt-3'>
-                Forgot your Password? <Link to='/reset-password'>Reset Password</Link>
             </p>
         </div>
     );

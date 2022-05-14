@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'auth_system.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'auth_sytem',
+        'NAME': 'auth_system',
         'USER': 'gitpod',
         'PASSWORD': 'frtysk489',
         'HOST': 'localhost'
@@ -140,11 +140,12 @@ STATICFILES_DIRS = [
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated'
-    ],
+    # 'DEFAULT_PERMISSION_CLASSES': [
+    #     'rest_framework.permissions.IsAuthenticated'
+    # ],
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
+        'rest_framework.authentication.TokenAuthentication'
     ),
 }
 
@@ -152,7 +153,7 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
 )
 
-DOMAIN = '8000-fajrwajr-wallproject-sh5e6nsb0cl.ws-us45.gitpod.io' 
+DOMAIN = '8000-fajrwajr-wallproject-7pcxk8fzua8.ws-us45.gitpod.io' 
 
 DJOSER = {
     'LOGIN_FIELD': 'email',

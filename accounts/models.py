@@ -2,6 +2,11 @@ from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager
 # Create your models here.
 
+class Comment(models.Model):
+
+   name = models.CharField(max_length=250)
+   comment = models.CharField(max_length=250)
+
 class UserAccountManager(BaseUserManager):
     def create_user(self, email, name, password=None):
         if not email:
