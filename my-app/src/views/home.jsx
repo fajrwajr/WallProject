@@ -28,6 +28,8 @@ async function getUser() {
 }
 
 getUser();
+
+
     return (
       <div className="container">
         <h1>Make a comment</h1>
@@ -38,6 +40,7 @@ getUser();
                         type='name'
                         placeholder='Name'
                         name='name'
+                        style={{width: "80px"}}
                         value={name}
                         onChange={e => onChange(e)}
                         required
@@ -65,8 +68,8 @@ getUser();
           {
             data.map((item) => 
             <>
-            <li>{item.name}</li>
-            <li>{item.comment}</li>
+            <div style={{ fontSize: "20px" }}>{item.name}</div>
+            <div>{item.comment}</div>
             </>
             )
           }

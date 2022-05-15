@@ -5,7 +5,7 @@ import { login } from '../actions/auth';
 import { useNavigate } from 'react-router-dom';
 
 const Login = ({login, isAuthenticated}) => {
-
+    const [errors, setErrors] = useState([])
     const [formData, setFormData] = useState({
         email: '',
         password: '' 
@@ -17,9 +17,9 @@ const Login = ({login, isAuthenticated}) => {
 
     const onSubmit = e => {
         e.preventDefault();
-
-        login(email, password);
-    };
+      login(email, password);
+        
+    }
     const navigateTo = useNavigate();
 
 
@@ -31,6 +31,7 @@ const Login = ({login, isAuthenticated}) => {
         <div className='container mt-5'>
             <h1>Sign In</h1>
             <p>Sign into your Account</p>
+            <h1>Look in your email for a verifcation message</h1>
             <form onSubmit={e => onSubmit(e)}>
                 <div className='form-group'>
                     <input

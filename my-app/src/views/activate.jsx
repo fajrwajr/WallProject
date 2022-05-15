@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { verify } from '../actions/auth';
-import { useNavigate, useParams } from 'react-router-dom';
+import { Navigate, useNavigate, useParams } from 'react-router-dom';
 const Activate = ({verify, match}) => {
    const [verified, setVerified] = useState(false)
     let { uid, token } = useParams();
@@ -13,19 +13,17 @@ const Activate = ({verify, match}) => {
         setVerified(true)
     };
     
-    // const navigateTo = useNavigate();
+    const navigateTo = useNavigate();
 
 
     if (verified) {
-        console.log("It worked")
-    } else {
-        console.log('Failed')
-    }
+        navigateTo("/")
+    } 
 
     return (
         <div className='container mt-5'>
           <h1>Verify your account</h1>
-          <button onClick={() => {
+          <button className='btn btn-primary'  onClick={() => {
               verify_account()
               }}>Verify</button>
         </div>
