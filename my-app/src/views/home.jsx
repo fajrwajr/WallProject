@@ -3,7 +3,7 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 import { comments } from '../actions/auth';
 
-const Home = ({comments}) => {
+const Home = ({comments, isAuthenticated}) => {
   const [formData, setFormData] = useState({
     name: '',
     comment: ''
@@ -43,12 +43,24 @@ getUser();
                         required
                     />
                 </div>
-          <div className='form-group'>
-          <input type="text" name="comment" placeholder='Comment' value={comment}                         onChange={e => onChange(e)}
-/>
-          </div>
-                <button className='btn btn-primary' type='submit'>Make a Comment</button>
-            </form>
+          {!isAuthenticated ?
+          
+          <><div className='form-group'>
+              <input type="text" name="comment"
+                placeholder='Comment'
+                value={comment}
+                disabled
+                onChange={e => onChange(e)} />
+            </div><button className='btn btn-primary' type='submit'>Make a Comment</button></>
+            : 
+            <><div className='form-group'>
+            <input type="text" name="comment"
+              placeholder='Comment'
+              value={comment}
+              onChange={e => onChange(e)} />
+          </div><button className='btn btn-primary' type='submit'>Make a Comment</button></>    }
+         </form>
+
         <div>
           {
             data.map((item) => 
@@ -63,4 +75,9 @@ getUser();
     )
 }
 
-export default connect(null, { comments })(Home);
+const mapStateToProps = state => ({
+  isAuthenticated: state.auth.isAuthenticated
+});
+
+
+export default connect(mapStateToProps, { comments })(Home);

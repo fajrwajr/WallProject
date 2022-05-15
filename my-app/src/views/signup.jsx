@@ -92,6 +92,9 @@ const Signup = ({signup, isAuthenticated}) => {
             <p className='mt-3'>
                 Already have an account? <Link to='/login'>Log In</Link>
             </p>
+            <p className='mt-3'>
+                Want to view the discussion? <Link to='/comment'>View Discussion</Link>
+            </p>
         </div>
     );
 };
