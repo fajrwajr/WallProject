@@ -17,7 +17,7 @@ const Activate = ({verify, match}) => {
 
 
     if (verified) {
-        navigateTo("/")
+        navigateTo("/login")
     } 
 
     return (

@@ -28,7 +28,7 @@ export const load_user = () => async dispatch => {
             }
         }
         try {
-            const res = await axios.get(`https://8000-fajrwajr-wallproject-7pcxk8fzua8.ws-us45.gitpod.io/auth/users/me/`, config);
+            const res = await axios.get(`${process.env.REACT_APP_API_URL}/auth/users/me/`, config);
     
             dispatch({
                 type: USER_LOADED_SUCCESS,
@@ -58,7 +58,7 @@ export const checkAuthenticated = () => async dispatch => {
         const body = JSON.stringify({ token: localStorage.getItem('access') });
 
         try {
-            const res = await axios.post(`https://8000-fajrwajr-wallproject-7pcxk8fzua8.ws-us45.gitpod.io/auth/jwt/verify/`, body, config)
+            const res = await axios.post(`${process.env.REACT_APP_API_URL}/auth/jwt/verify/`, body, config)
 
             if (res.data.code !== 'token_not_valid') {
                 dispatch({
@@ -92,7 +92,7 @@ export const login = (email, password) => async dispatch => {
     const body = JSON.stringify({ email, password });
 
     try {
-        const res = await axios.post(`https://8000-fajrwajr-wallproject-7pcxk8fzua8.ws-us45.gitpod.io/auth/jwt/create/`, body, config)
+        const res = await axios.post(`${process.env.REACT_APP_API_URL}/auth/jwt/create/`, body, config)
         ;
 
         dispatch({
@@ -119,7 +119,7 @@ export const verify = (uid, token) => async dispatch => {
 const body = JSON.stringify({ uid, token })
 
 try {
- await axios.post(`https://8000-fajrwajr-wallproject-7pcxk8fzua8.ws-us45.gitpod.io/auth/users/activation/`, body, config);
+ await axios.post(`${process.env.REACT_APP_API_URL}/auth/users/activation/`, body, config);
 
     dispatch({
         type: ACTIVATION_SUCCESS,
@@ -140,7 +140,7 @@ export const signup = (name, email, password, re_password) => async dispatch => 
 const body = JSON.stringify({name, email, password, re_password})
 
 try {
-    const res = await axios.post(`https://8000-fajrwajr-wallproject-7pcxk8fzua8.ws-us45.gitpod.io/auth/users/`, body, config);
+    const res = await axios.post(`${process.env.REACT_APP_API_URL}/auth/users/`, body, config);
 
     dispatch({
         type: SIGNUP_SUCCESS,
@@ -162,7 +162,7 @@ export const comments = (name, comment) => async dispatch => {
 const body = JSON.stringify({name, comment})
 
 try {
-    const res = await axios.post(`https://8000-fajrwajr-wallproject-7pcxk8fzua8.ws-us45.gitpod.io/api/comment/`, body, config);
+    const res = await axios.post(`${process.env.REACT_APP_API_URL}/api/comment/`, body, config);
 
     dispatch({
         type: COMMENT_SUCCESS,

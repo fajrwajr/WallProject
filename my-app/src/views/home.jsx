@@ -19,7 +19,7 @@ const onSubmit = e => {
 
 async function getUser() {
   try {
-    const response = await axios.get('https://8000-fajrwajr-wallproject-7pcxk8fzua8.ws-us45.gitpod.io/api/comment/');
+    const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/comment/`);
 
     setData(response.data);
   } catch (err) {

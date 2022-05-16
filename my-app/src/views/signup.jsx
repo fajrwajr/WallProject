@@ -53,6 +53,7 @@ const Signup = ({signup, isAuthenticated}) => {
                         className='form-control'
                         type='name'
                         placeholder='Name'
+                        required
                         name='name'
                         value={formData.name}
                         onChange={e => onChange(e)}
@@ -65,6 +66,7 @@ const Signup = ({signup, isAuthenticated}) => {
                         type='email'
                         placeholder='Email'
                         name='email'
+                        required
                         value={formData.email}
                         onChange={e => onChange(e)}
                     />
@@ -76,6 +78,7 @@ const Signup = ({signup, isAuthenticated}) => {
                         type='password'
                         placeholder='Password'
                         name='password'
+                        required
                         value={formData.password}
                         onChange={e => onChange(e)}
                         minLength='6'
@@ -88,6 +91,7 @@ const Signup = ({signup, isAuthenticated}) => {
                         type='password'
                         placeholder='Confirm Password'
                         name='re_password'
+                        required
                         value={formData.re_password}
                         onChange={e => onChange(e)}
                         minLength='6'

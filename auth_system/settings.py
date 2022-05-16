@@ -153,7 +153,7 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
 )
 
-DOMAIN = '8000-fajrwajr-wallproject-7pcxk8fzua8.ws-us45.gitpod.io' 
+DOMAIN = '8000-fajrwajr-wallproject-3847aioxa2b.ws-us45.gitpod.io' 
 
 DJOSER = {
     'LOGIN_FIELD': 'email',
