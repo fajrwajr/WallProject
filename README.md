@@ -2,8 +2,8 @@
 To run the frontend, run this command
 1. cd into the directory my-app
 2. Run npm install --save axios react-router-dom redux redux-devtools-extension react-redux redux-thunk
-On the backend, activate the virtual enviorment
-1. source venv/Scripts/activate
+On the backend, open a new terminal
+1.To activate the virtual enviorment, run source venv/Scripts/activate
 2. pip install django djangorestframework  djangorestframework-simplejwt djoser psycopg2 psycopg2-binary
 3. pip install python-decouple
 4. pip install django-dotenv
