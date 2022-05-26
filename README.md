@@ -5,7 +5,7 @@ To run the frontend, run this command
 
 On the backend, open a new terminal
 1.To activate the virtual enviorment, run source venv/Scripts/activate
-2. pip install django djangorestframework  djangorestframework-simplejwt djoser psycopg2 psycopg2-binary
+2. pip install django djangorestframework djangorestframework-simplejwt djoser psycopg2 psycopg2-binary
 3. pip install python-decouple
 4. pip install django-dotenv
 5. pip install django-cors-headers

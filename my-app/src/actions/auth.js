@@ -113,7 +113,7 @@ export const login = (email, password) => async dispatch => {
 export const verify = (uid, token) => async dispatch => {
     const config = {
         headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
         }
     }
 const body = JSON.stringify({ uid, token })
@@ -153,13 +153,13 @@ try {
 }
 }
 
-export const comments = (name, comment) => async dispatch => {
+export const comments = (comment) => async dispatch => {
     const config = {
         headers: {
             "Content-Type": "application/json"
         }
     }
-const body = JSON.stringify({name, comment})
+const body = JSON.stringify({comment})
 
 try {
     const res = await axios.post(`${process.env.REACT_APP_API_URL}/api/comment/`, body, config);

@@ -10,6 +10,7 @@ const Activate = ({verify, match}) => {
         // const token = p.token;
         console.log(uid, token)
         verify(uid, token);
+        
         setVerified(true)
     };
     

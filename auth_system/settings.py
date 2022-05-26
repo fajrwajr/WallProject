@@ -58,6 +58,8 @@ MIDDLEWARE = [
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True
+CSRF_COOKIE_SECURE=False
+CSRF_TRUSTED_ORIGINS = ['https://8000-fajrwajr-wallproject-24hcrsohpu5.ws-us46.gitpod.io']
 
 
 ROOT_URLCONF = 'auth_system.urls'
@@ -140,12 +142,10 @@ STATICFILES_DIRS = [
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 REST_FRAMEWORK = {
-    # 'DEFAULT_PERMISSION_CLASSES': [
-    #     'rest_framework.permissions.IsAuthenticated'
-    # ],
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
-        'rest_framework.authentication.TokenAuthentication'
+        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
     ),
 }
 
@@ -153,7 +153,7 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
 )
 
-DOMAIN = '8000-fajrwajr-wallproject-3847aioxa2b.ws-us45.gitpod.io' 
+DOMAIN = '8000-fajrwajr-wallproject-24hcrsohpu5.ws-us46.gitpod.io' 
 
 DJOSER = {
     'LOGIN_FIELD': 'email',
