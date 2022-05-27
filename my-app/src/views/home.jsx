@@ -5,7 +5,7 @@ import { comments } from '../actions/auth';
 
 const Home = ({comments, isAuthenticated}) => {
   const [formData, setFormData] = useState({
-    comment: ''
+    comment: '',
 });
 const [data, setData] = useState([])
 const { comment } = formData;
@@ -16,23 +16,11 @@ const onSubmit = e => {
   comments(comment);
 };
 
-async function getUser() {
-  try {
-    const response = await axios.get(`${process.env.REACT_APP_API_URL}/auth/users/`);
-
-    console.log(response.data);
-  } catch (err) {
-    console.log(err);
-  }
-}
-
-getUser();
-
 async function getComment() {
   try {
     const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/comment/`);
 
-    setData(response.data);
+    console.log(response.data);
   } catch (err) {
     console.log(err);
   }
@@ -67,6 +55,7 @@ getComment();
           {
             data.map((item) => 
             <>
+            <div>{item.user}</div>
             <div>{item.comment}</div>
             </>
             )
