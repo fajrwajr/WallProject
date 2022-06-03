@@ -20,7 +20,7 @@ async function getComment() {
   try {
     const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/comment/`);
 
-    console.log(response.data);
+    setData(response.data);
   } catch (err) {
     console.log(err);
   }
@@ -55,7 +55,6 @@ getComment();
           {
             data.map((item) => 
             <>
-            <div>{item.user}</div>
             <div>{item.comment}</div>
             </>
             )

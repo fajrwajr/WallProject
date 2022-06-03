@@ -13,3 +13,13 @@ class CommentSerializer(ModelSerializer):
     class Meta:
         model = Comment
         fields=('id', 'comment', 'user')
+        extra_kwargs = {
+            'user': { 'read_only': True }
+        }
+
+    def create(self, validated_data):
+        new_comment = Comment(**validated_data)
+        new_comment.user_id = self.context['request'].user.id
+        new_comment.save()
+        return new_comment
+ 

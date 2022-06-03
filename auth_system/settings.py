@@ -59,7 +59,7 @@ MIDDLEWARE = [
 
 CORS_ORIGIN_ALLOW_ALL = True
 CSRF_COOKIE_SECURE=False
-CSRF_TRUSTED_ORIGINS = ['https://8000-fajrwajr-wallproject-24hcrsohpu5.ws-us46.gitpod.io']
+CSRF_TRUSTED_ORIGINS = ['https://3000-fajrwajr-wallproject-gbu6olxcg0h.ws-us46.gitpod.io']
 
 
 ROOT_URLCONF = 'auth_system.urls'
@@ -67,7 +67,7 @@ ROOT_URLCONF = 'auth_system.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'build')],
+        'DIRS': [os.path.join(BASE_DIR, 'my-app/public')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -137,13 +137,13 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'build/static')
+    os.path.join(BASE_DIR, 'my-app/public/static')
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 REST_FRAMEWORK = {
     # 'DEFAULT_PERMISSION_CLASSES': [
-    #     'rest_framework.permissions.IsAuthenticated',
+    #     'rest_framework.permissions.isAuthenticated',
     # ],
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
@@ -155,7 +155,7 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
 )
 
-DOMAIN = '8000-fajrwajr-wallproject-24hcrsohpu5.ws-us46.gitpod.io' 
+DOMAIN = '3000-fajrwajr-wallproject-gbu6olxcg0h.ws-us46.gitpod.io' 
 
 DJOSER = {
     'LOGIN_FIELD': 'email',

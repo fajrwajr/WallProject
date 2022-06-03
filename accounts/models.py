@@ -23,8 +23,9 @@ class UserAccountManager(BaseUserManager):
         return self.create_user(name=name, email=email, password = password, is_superuser=True)
 
 class UserAccount(AbstractBaseUser, PermissionsMixin):
+    id = models.AutoField(primary_key=True)
     email = models.EmailField(max_length=255, unique=True)
-    name = models.CharField(max_length=355, unique=False, null=True)
+    name = models.CharField(max_length=355, unique=False)
     is_superuser = models.BooleanField(default=True)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=True)
@@ -42,6 +43,4 @@ class Comment(models.Model):
    comment = models.CharField(max_length=250)
    user = models.ForeignKey(UserAccount, null=True, on_delete=models.CASCADE)
       
-   def __str__(self):
-    return self.user.name
 

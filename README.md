@@ -17,3 +17,6 @@ To create the database
 On the my-app directory, where your .env file is the url might have changed make sure you paste the correct one
 On .env in auth_system 
 1. Add your sendgrid api key
+To use Django-Admin 
+Run python manage.py createsuperuser
+And enter the crendentials asked
